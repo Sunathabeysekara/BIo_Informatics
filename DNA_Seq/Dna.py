@@ -9,8 +9,8 @@ def dnagenerate(limit):
         d=d+dd
     return d
 
-
-Dnaseq=dnagenerate(12)
+limit=input('Give the length of DNA Seq:')
+Dnaseq=dnagenerate(int(limit))
 print("Generated origianl Seq: ",Dnaseq)
 
 
@@ -95,3 +95,19 @@ else:
     gc_content(mutatedDnaseq)
 
 #freq score cal
+whichtofreq=input("which DNA to get freq. 1(original) or else: ")
+inputseq=2
+if(whichtofreq==1):
+    inseq=Dnaseq
+else:
+    inseq=mutatedDnaseq
+def frequencies(inseq):
+    
+    for y in nucloes:
+        count=0
+        for x in inseq:
+            if x==y:
+                count+=1
+        print("frequency of ",y," is:",(count/len(inseq))*100,"%")
+
+frequencies(Dnaseq)
